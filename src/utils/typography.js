@@ -1,12 +1,15 @@
 import Typography from "typography"
-import Wordpress2016 from "typography-theme-wordpress-2016"
-import stAnnesTheme from "typography-theme-st-annes"
+import grandViewTheme from "typography-theme-grand-view"
 
-stAnnesTheme.baseFontSize = `20px`
+grandViewTheme.baseLineHeight = 1.7
+grandViewTheme.overrideThemeStyles = () => ({
+  a: {
+    color: "#2e7d32",
+  },
+})
 
-const typography = new Typography(stAnnesTheme)
+const typography = new Typography(grandViewTheme)
 
-// Hot reload typography in development.
 if (process.env.NODE_ENV !== `production`) {
   typography.injectStyles()
 }

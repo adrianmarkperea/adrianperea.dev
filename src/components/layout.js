@@ -1,51 +1,26 @@
 import React from "react"
 import { Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
+import layoutStyles from "./layout.module.css"
 
 import { rhythm, scale } from "../utils/typography"
 
-const Layout = ({ location, title, children }) => {
-  const rootPath = `${__PATH_PREFIX__}/`
-  let header
+const Layout = ({ title, children }) => {
+  const data = useStaticQuery(graphql`
+    query LayoutQuery {
+      site {
+        siteMetadata {
+          social {
+            twitter
+            github
+          }
+        }
+      }
+    }
+  `)
 
-  if (location.pathname === rootPath) {
-    header = (
-      <h1
-        style={{
-          ...scale(1.5),
-          marginBottom: rhythm(1.5),
-          marginTop: 0,
-        }}
-      >
-        <Link
-          style={{
-            boxShadow: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
-        >
-          {title}
-        </Link>
-      </h1>
-    )
-  } else {
-    header = (
-      <h3
-        style={{
-          marginTop: 0,
-        }}
-      >
-        <Link
-          style={{
-            boxShadow: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
-        >
-          {title}
-        </Link>
-      </h3>
-    )
-  }
+  const { social } = data.site.siteMetadata
+
   return (
     <div
       style={{
@@ -55,12 +30,55 @@ const Layout = ({ location, title, children }) => {
         padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
       }}
     >
-      <header>{header}</header>
+      <header>
+        <h1
+          style={{
+            marginBottom: rhythm(1.25),
+            marginTop: 0,
+            fontWeight: 900,
+          }}
+        >
+          <Link
+            style={{
+              boxShadow: `none`,
+              color: `inherit`,
+            }}
+            to={`/`}
+          >
+            {title}
+          </Link>
+        </h1>
+      </header>
       <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
+      <footer style={{ display: `flex`, justifyContent: `space-between` }}>
+        <div>
+          <a
+            className={layoutStyles.footerLink}
+            href={`https://twitter.com/${social.twitter}`}
+            style={{ marginRight: rhythm(0.2) }}
+          >
+            Twitter
+          </a>
+          <a
+            className={layoutStyles.footerLink}
+            href={`https://github.com/${social.github}`}
+            style={{ marginRight: rhythm(0.2) }}
+          >
+            Github
+          </a>
+          <a
+            className={layoutStyles.footerLink}
+            href="#"
+            style={{ marginRight: rhythm(0.2) }}
+          >
+            Kofi
+          </a>
+        </div>
+        <div>
+          <a className={layoutStyles.footerLink} href="rss.xml">
+            rss
+          </a>
+        </div>
       </footer>
     </div>
   )

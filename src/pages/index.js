@@ -10,10 +10,8 @@ const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
 
-  return (
-    <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
-      <Bio />
+  const content = (
+    <React.Fragment>
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (
@@ -22,6 +20,7 @@ const BlogIndex = ({ data, location }) => {
               <h3
                 style={{
                   marginBottom: rhythm(1 / 4),
+                  fontFamily: `Montserrat`,
                 }}
               >
                 <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
@@ -40,6 +39,13 @@ const BlogIndex = ({ data, location }) => {
           </article>
         )
       })}
+    </React.Fragment>
+  )
+
+  return (
+    <Layout title={siteTitle}>
+      <SEO title="All posts" />
+      <Bio />
     </Layout>
   )
 }
