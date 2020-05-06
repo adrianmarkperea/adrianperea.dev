@@ -1,0 +1,30 @@
+.title {
+  font-weight: 900;
+  margin-top: 0;
+}
+
+.titleLink {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1.5em;
+}
+
+.navLinks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navLink {
+  display: inline-block;
+  margin-right: 0.5em;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+}

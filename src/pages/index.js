@@ -37,7 +37,6 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout title={siteTitle}>
       <SEO title="All posts" />
-      <Bio />
     </Layout>
   )
 }

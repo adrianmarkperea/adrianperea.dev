@@ -1,0 +1,14 @@
+:root {
+  --font-color-emphasis: #347474;
+  --font-color-body: #35495e;
+  --font-color-accent: #ff7e67;
+}
+
+body {
+  font-family: 'Montserrat';
+  color: var(--font-color-body);
+}
+
+a {
+  color: var(--font-color-emphasis);
+}

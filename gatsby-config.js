@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `On The Edge`,
+    title: `Adrian Perea`,
     author: {
       name: `Adrian Perea`,
       summary: `who lives and works in San Francisco building useful things.`,
