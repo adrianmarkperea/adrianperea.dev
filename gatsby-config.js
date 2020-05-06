@@ -3,7 +3,14 @@ module.exports = {
     title: `Adrian Perea`,
     author: {
       name: `Adrian Perea`,
+      firstName: `Adrian`,
+      lastName: `Perea`,
       summary: `who lives and works in San Francisco building useful things.`,
+      descriptions: [
+        `and I write software for fun`,
+        `and I think you are beautiful`,
+        `wazzzaaaaaaaaaaaaaaaaaaaaaaaaaap`,
+      ],
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,

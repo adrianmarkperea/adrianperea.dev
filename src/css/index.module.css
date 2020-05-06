@@ -1,0 +1,43 @@
+.hero {
+  height: 100vh;
+  background-color: var(--font-color-body);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heroText {
+  margin-top: -5em;
+}
+
+.heroText .hi {
+  font-size: 0.4em;
+  text-transform: lowercase;
+  font-weight: 300;
+  color: var(--font-color-accent);
+  font-style: italic;
+}
+
+.heroText h1 {
+  font-size: 3em;
+  margin-bottom: 0.75em;
+  line-height: 0.8;
+}
+
+.heroText .name {
+  position: relative;
+  z-index: 1;
+}
+
+.heroText .name::after {
+  content: ' ';
+  display: block;
+  position: absolute;
+  width: 2em;
+  height: 3px;
+  bottom: 10px;
+  left: -5px;
+  z-index: -1;
+  background-color: var(--font-color-accent)
+}

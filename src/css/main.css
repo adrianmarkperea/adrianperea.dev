@@ -4,6 +4,11 @@
   --font-color-accent: #ff7e67;
 }
 
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
 body {
   font-family: 'Montserrat';
   color: var(--font-color-body);
