@@ -15,8 +15,6 @@ const Mutating = ({ text, popSize = 1000, timeout = 50, mutation = 0.01 }) => {
     const stats = population.current.getStats()
     setStats(stats)
 
-    console.log(stats)
-
     population.current.generateIfNotFinished()
 
     if (!population.current.isFinished()) {
