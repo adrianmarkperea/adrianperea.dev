@@ -1,6 +1,7 @@
 import React from "react"
 import SEO from "../components/seo"
 import indexStyles from "../css/index.module.css"
+import Mutating from "../components/mutating"
 
 const getRandomDescription = descriptions => {
   return descriptions[Math.floor(Math.random() * descriptions.length)]
@@ -19,7 +20,7 @@ const BlogIndex = ({ data }) => {
           I'm{` `}
           <span className={indexStyles.name}>{author.firstName}</span>
         </h1>
-        <p>{description}</p>
+        <Mutating text={description} />
       </div>
     </div>
   )

@@ -29,6 +29,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
+    "typeface-inconsolata": "0.0.72",
     "typeface-merriweather": "0.0.72",
     "typeface-montserrat": "0.0.75"
   },
