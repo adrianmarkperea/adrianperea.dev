@@ -2,26 +2,15 @@ import React from "react"
 import { Population } from "../utils/genetic"
 import mutatingStyles from "../css/mutating.module.css"
 
-const Mutating = ({ text, popSize = 1000, timeout = 50, mutation = 0.01 }) => {
-  const [stats, setStats] = React.useState()
-
+const useGeneticAlgorithm = ({ text, popSize, mutation, timeout, cb }) => {
   const population = React.useRef()
   const rafId = React.useRef()
 
   const run = React.useCallback(() => {
     population.current.calculateFitness()
     population.current.evaluate()
-
-    const stats = population.current.getStats()
-    setStats(stats)
-
+    cb(population.current.getStats())
     population.current.generateIfNotFinished()
-
-    if (!population.current.isFinished()) {
-      setTimeout(() => {
-        rafId.current = requestAnimationFrame(run)
-      }, timeout)
-    }
   }, [timeout])
 
   React.useEffect(() => {
@@ -30,6 +19,26 @@ const Mutating = ({ text, popSize = 1000, timeout = 50, mutation = 0.01 }) => {
 
     return () => cancelAnimationFrame(rafId.current)
   }, [text, popSize, mutation, run])
+
+  React.useEffect(() => {
+    if (!population.current.isFinished()) {
+      setTimeout(() => {
+        rafId.current = requestAnimationFrame(run)
+      }, timeout)
+    }
+  })
+}
+
+const Mutating = ({ text, popSize = 1000, timeout = 50, mutation = 0.01 }) => {
+  const [stats, setStats] = React.useState()
+
+  useGeneticAlgorithm({
+    text,
+    popSize,
+    timeout,
+    mutation,
+    cb: stats => setStats(stats),
+  })
 
   if (!stats) {
     return null
