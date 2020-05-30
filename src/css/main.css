@@ -1,7 +1,7 @@
 :root {
   --font-color-emphasis: #347474;
-  --font-color-body: #35495e;
-  --font-color-accent: #ff7e67;
+  --font-color-body: #fff;
+  --font-color-accent: green;
 }
 
 html, body {
@@ -11,7 +11,7 @@ html, body {
 
 body {
   font-family: 'Montserrat';
-  color: var(--font-color-body);
+  color: #111;
 }
 
 a {

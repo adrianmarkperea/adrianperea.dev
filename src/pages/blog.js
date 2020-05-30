@@ -37,6 +37,7 @@ const Blog = ({ data, location }) => {
   return (
     <Layout title={siteTitle}>
       <SEO title="All posts" />
+      {content}
     </Layout>
   )
 }
