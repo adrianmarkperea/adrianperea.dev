@@ -36,7 +36,9 @@
 .hero {
   height: calc(100vh - 55px);
   background-color: var(--bg-color-light);
-  padding: 110px 2em;
+  padding: 110px 3.4em;
+  display: flex;
+  justify-content: center;
 }
 
 .heroText h1 {

@@ -8,7 +8,6 @@ module.exports = {
       summary: `who lives and works in San Francisco building useful things.`,
       descriptions: [
         `and i write software for fun`,
-        `and i explain with moving pictures`,
         `and i do artificial intelligence`,
       ],
     },

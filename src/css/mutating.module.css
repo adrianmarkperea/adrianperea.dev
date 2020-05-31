@@ -7,14 +7,31 @@
   margin-bottom: 0.2em;
 }
 
+.info {
+  animation: fade-in 1s ease-in 1.5s;
+  animation-fill-mode: forwards;
+  opacity: 0; 
+  display: flex;
+  justify-content: space-between;
+}
+
 .stats {
   list-style: none;
   padding: 0;
   margin: 0;
   font-size: 0.8em;
-  opacity: 0; 
-  animation: fade-in 1s ease-in 1.5s;
-  animation-fill-mode: forwards;
+}
+
+.cta {
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+}
+
+.cta span {
+  margin-right: 0.5em;
+  font-size: 0.8em;
+  color: var(--font-color-text)
 }
 
 @keyframes fade-in {
