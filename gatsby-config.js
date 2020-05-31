@@ -8,10 +8,8 @@ module.exports = {
       summary: `who lives and works in San Francisco building useful things.`,
       descriptions: [
         `and i write software for fun`,
-        `and i think you are beautiful`,
-        `and i am yours`,
-        `and tangina ang baho ko na`,
-        `and i love you bebe gurl`,
+        `and i explain with moving pictures`,
+        `and i do artificial intelligence`,
       ],
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
