@@ -1,7 +1,12 @@
 :root {
   --font-color-emphasis: #347474;
-  --font-color-body: #fff;
   --font-color-accent: #649d66;
+  --font-color-body: rgba(0, 0, 0, 0.8);
+  --bg-color-light: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 html, body {
@@ -11,7 +16,7 @@ html, body {
 
 body {
   font-family: 'Montserrat';
-  color: #111;
+  color: var(--font-color-body);
 }
 
 a {

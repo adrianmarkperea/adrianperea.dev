@@ -1,27 +1,47 @@
-.hero {
-  height: 100vh;
-  background-color: var(--font-color-body);
+.nav {
+  position: fixed;
+  width: 100%;
+  box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.navContainer {
   display: flex;
-  justify-content: center;
+  height: 55px;
+  width: 100%;
   align-items: center;
+  justify-content: space-between;
+  padding: 1.25em;
 }
 
-.heroText {
-  margin-top: -5em;
+.brand {
+  font-size: 1.6em;
 }
 
-.heroText .hi {
-  font-size: 0.4em;
-  text-transform: lowercase;
-  font-weight: 300;
-  color: var(--font-color-accent);
-  font-style: italic;
+.navLinks > * {
+  margin-left: 1em;
+}
+
+.navLinks > a {
+  color: var(--font-);
+  text-decoration: none;
+  font-size: 0.9em;
+}
+
+.modeToggler {
+  background: none;
+  border: none;
+  font-size: 1.2em;
+}
+
+.hero {
+  height: calc(100vh - 55px);
+  background-color: var(--bg-color-light);
+  padding: 110px 2em;
 }
 
 .heroText h1 {
-  font-size: 3.5em;
-  margin-bottom: 0.3em;
-  line-height: 0.8;
+  font-size: 2.5em;
+  margin: 0;
 }
 
 .heroText .name {
@@ -34,8 +54,8 @@
   display: block;
   position: absolute;
   width: 2em;
-  height: 3px;
-  bottom: 10px;
+  height: 5px;
+  bottom: 8px;
   left: -5px;
   z-index: -1;
   background-color: var(--font-color-accent)

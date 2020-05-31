@@ -2,6 +2,7 @@ import React from "react"
 import SEO from "../components/seo"
 import indexStyles from "../css/index.module.css"
 import Mutating from "../components/mutating"
+import { Link } from "gatsby"
 
 const getRandomDescription = descriptions => {
   return descriptions[Math.floor(Math.random() * descriptions.length)]
@@ -12,17 +13,30 @@ const BlogIndex = ({ data }) => {
   const description = getRandomDescription(author.descriptions)
 
   return (
-    <div className={indexStyles.hero}>
-      <div className={indexStyles.heroText}>
-        <h1>
-          <span className={indexStyles.hi}>Hi</span>
-          <br />
-          I'm{` `}
-          <span className={indexStyles.name}>{author.firstName}</span>
-        </h1>
-        <Mutating text={description} />
-      </div>
-    </div>
+    <>
+      <header>
+        <nav className={indexStyles.nav}>
+          <div className={indexStyles.navContainer}>
+            <div className={indexStyles.brand}>🐸</div>
+            <div className={indexStyles.navLinks}>
+              <Link to="/blog">Blog</Link>
+              <Link to="/projects">Projects</Link>
+              <button className={indexStyles.modeToggler}>🌙</button>
+            </div>
+          </div>
+        </nav>
+
+        <div className={indexStyles.hero}>
+          <div className={indexStyles.heroText}>
+            <h1>
+              Hi, I'm{` `}
+              <span className={indexStyles.name}>{author.firstName}</span>
+            </h1>
+            <Mutating text={description} />
+          </div>
+        </div>
+      </header>
+    </>
   )
 }
 
