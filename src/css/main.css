@@ -5,6 +5,10 @@
   --bg-color-light: #ffffff;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -21,4 +25,13 @@ body {
 
 a {
   color: var(--font-color-emphasis);
+}
+
+h1, h2, p {
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.8em;
+  margin-bottom: 0.5em;
 }

@@ -2,6 +2,9 @@
   position: fixed;
   width: 100%;
   box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.2);
+  top: 0 !important;
+  z-index: 1000;
+  background: white;
 }
 
 .navContainer {
@@ -34,11 +37,12 @@
 }
 
 .hero {
-  height: calc(100vh - 55px);
-  background-color: var(--bg-color-light);
-  padding: 110px 3.4em;
+  margin-top: 55px;
   display: flex;
   justify-content: center;
+  height: calc(100vh - 55px);
+  align-items: center;
+  position: relative;
 }
 
 .heroText h1 {
@@ -61,4 +65,46 @@
   left: -5px;
   z-index: -1;
   background-color: var(--font-color-accent)
+}
+
+.down {
+  opacity: 0;
+  animation: fade-in 1s ease-in 2s, bounce 1.3s ease infinite;
+  animation-fill-mode: forwards;
+  position: absolute;
+  bottom: 20px;
+  display: pointer;
+}
+
+.down button {
+  background: none;
+  border: 0;
+}
+
+.section {
+  padding: 1.8em;
+  min-height: calc(100vh - 55px);
+}
+
+.aboutMe {
+  padding: 1em 1.5em;
+  border-radius: 8px;
+}
+
+.aboutMe p {
+  line-height: 1.8;
+  font-size: 1.1em;
+  margin-bottom: 1em;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  30% { transform: translateY(-4px); }
+  50% { transform: translateY(0); }
+  100% { transform: translateY(0); }
 }
