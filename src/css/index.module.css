@@ -82,10 +82,12 @@
   border: 0;
 }
 
-.section {
-  padding: 1.8em;
-  min-height: 100vh - 55px;
-  min-height: calc(var(--vh, 1vh) * 100 - 55px);
+.aboutMeSection {
+  padding: 1.8em 1.8em 3.2em;
+}
+
+.aboutMeSection h2 {
+  margin-bottom: 0.5em;
 }
 
 .aboutMe {
@@ -112,6 +114,72 @@
 
 .socialIcon:hover {
   color: var(--font-color-accent);  
+}
+
+.contactSection {
+  padding: 3em 1.8em;
+  background: var(--font-color-accent);
+}
+
+.contactSection h2,
+.contactSection small {
+  color: white;
+}
+
+.contactForm {
+  background: white;
+  color: var(--font-color-body);
+  padding: 1.4em;
+  border-radius: 8px;
+  box-shadow: 0.5em 1.25em 1.75em 0 rgba(0,0,0,.3);
+  margin-top: 1.5em;
+}
+
+.contactForm label {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.8em;
+}
+
+.contactForm input,
+.contactForm textarea {
+  margin: 0.5em 0;
+  padding: 0.4em;
+  width: 100%;
+}
+
+.contactForm button {
+  text-transform: uppercase;
+  font-size: 0.8em;
+  background: var(--font-color-accent);
+  outline: none;
+  border: none;
+  color: white;
+  margin: 1em 0;
+  padding: 0.8em;
+  width: 100%;
+  border-radius: 1.5em;
+  font-weight: bold;
+}
+
+.footer {
+  padding: 2.4em 1.8em;
+}
+
+.footerLinks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footerLinks div {
+  position: relative;
+  top: 2px;
+}
+
+.footer p {
+  margin-top: 2em;
+  font-size: 0.9em;
 }
 
 @keyframes fade-in {

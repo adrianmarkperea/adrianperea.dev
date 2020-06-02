@@ -9,6 +9,13 @@ import Image from "gatsby-image"
 
 const HEADER_HEIGHT = 55
 
+const getRandomDescription = descriptions => {
+  return descriptions[Math.floor(Math.random() * descriptions.length)]
+}
+
+const scrollTo = ref =>
+  window.scrollTo(0, ref.current.offsetTop - HEADER_HEIGHT)
+
 const NavList = () => (
   <nav className={indexStyles.nav}>
     <div className={indexStyles.navContainer}>
@@ -22,12 +29,50 @@ const NavList = () => (
   </nav>
 )
 
-const getRandomDescription = descriptions => {
-  return descriptions[Math.floor(Math.random() * descriptions.length)]
-}
+const ContactForm = () => {
+  const [name, setName] = React.useState("")
+  const [email, setEmail] = React.useState("")
+  const [message, setMessage] = React.useState("")
 
-const scrollTo = ref =>
-  window.scrollTo(0, ref.current.offsetTop - HEADER_HEIGHT)
+  return (
+    <>
+      <form className={indexStyles.contactForm}>
+        <div>
+          <label>
+            Name
+            <br />
+            <input
+              type="text"
+              value={name}
+              onChange={e => setName(e.target.value)}
+            />
+          </label>
+        </div>
+        <div>
+          <label>
+            Email
+            <br />
+            <input
+              type="email"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+            />
+          </label>
+        </div>
+        <label>
+          Message
+          <br />
+          <textarea
+            value={message}
+            rows={4}
+            onChange={e => setMessage(e.target.value)}
+          />
+        </label>
+        <button type="submit">Send</button>
+      </form>
+    </>
+  )
+}
 
 const BlogIndex = ({ data }) => {
   const author = data.site.siteMetadata.author
@@ -68,7 +113,7 @@ const BlogIndex = ({ data }) => {
         </IconContext.Provider>
       </div>
 
-      <section ref={descriptionRef} className={indexStyles.section}>
+      <section ref={descriptionRef} className={indexStyles.aboutMeSection}>
         <h2>About Me</h2>
         <div className={indexStyles.aboutMe}>
           <Image
@@ -124,6 +169,32 @@ const BlogIndex = ({ data }) => {
           </div>
         </div>
       </section>
+
+      <section className={indexStyles.contactSection}>
+        <h2>Send a message</h2>
+        <small>and let's make something happen</small>
+        <ContactForm />
+      </section>
+
+      <footer className={indexStyles.footer}>
+        <div className={indexStyles.footerLinks}>
+          <div>
+            <IconContext.Provider value={{ className: indexStyles.socialIcon }}>
+              <a href="https://twitter.com/adrianmarkperea">
+                <FaTwitter />
+              </a>
+              <a href="https://github.com/adrianmarkperea">
+                <FaGithub />
+              </a>
+              <a href="https://www.linkedin.com/in/adrian-perea/">
+                <FaLinkedin />
+              </a>
+            </IconContext.Provider>
+          </div>
+          <a href="rss">rss</a>
+        </div>
+        <p>All materials &copy; Adrian Perea 2020</p>
+      </footer>
     </>
   )
 }
