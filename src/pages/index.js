@@ -111,9 +111,15 @@ const BlogIndex = ({ data }) => {
 
           <div className={indexStyles.socialIcons}>
             <IconContext.Provider value={{ className: indexStyles.socialIcon }}>
-              <FaTwitter />
-              <FaGithub />
-              <FaLinkedin />
+              <a href="https://twitter.com/adrianmarkperea">
+                <FaTwitter />
+              </a>
+              <a href="https://github.com/adrianmarkperea">
+                <FaGithub />
+              </a>
+              <a href="https://www.linkedin.com/in/adrian-perea/">
+                <FaLinkedin />
+              </a>
             </IconContext.Provider>
           </div>
         </div>
