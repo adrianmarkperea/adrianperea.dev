@@ -33,6 +33,16 @@ const BlogIndex = ({ data }) => {
   const descriptionRef = React.useRef()
   const scrollToDescription = () => scrollTo(descriptionRef)
 
+  React.useEffect(() => {
+    const defineVh = () => {
+      let vh = window.innerHeight * 0.01
+      document.documentElement.style.setProperty("--vh", `${vh}px`)
+    }
+
+    defineVh()
+    window.addEventListener("resize", defineVh)
+  }, [])
+
   return (
     <>
       <NavList />

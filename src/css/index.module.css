@@ -40,9 +40,10 @@
   margin-top: 55px;
   display: flex;
   justify-content: center;
-  height: calc(100vh - 55px);
   align-items: center;
   position: relative;
+  height: 100vh - 55px;
+  height: calc(var(--vh, 1vh) * 100 - 55px);
 }
 
 .heroText h1 {
@@ -83,7 +84,8 @@
 
 .section {
   padding: 1.8em;
-  min-height: calc(100vh - 55px);
+  height: 100vh - 55px;
+  height: calc(var(--vh, 1vh) * 100 - 55px);
 }
 
 .aboutMe {
