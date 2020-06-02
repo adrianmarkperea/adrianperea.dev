@@ -4,8 +4,10 @@ import indexStyles from "../css/index.module.css"
 import Mutating from "../components/mutating"
 import { Link } from "gatsby"
 import { IconContext } from "react-icons"
-import { FaChevronDown } from "react-icons/fa"
+import { FaChevronDown, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa"
 import Image from "gatsby-image"
+
+const HEADER_HEIGHT = 55
 
 const NavList = () => (
   <nav className={indexStyles.nav}>
@@ -24,7 +26,8 @@ const getRandomDescription = descriptions => {
   return descriptions[Math.floor(Math.random() * descriptions.length)]
 }
 
-const scrollTo = ref => window.scrollTo(0, ref.current.offsetTop)
+const scrollTo = ref =>
+  window.scrollTo(0, ref.current.offsetTop - HEADER_HEIGHT)
 
 const BlogIndex = ({ data }) => {
   const author = data.site.siteMetadata.author
@@ -78,8 +81,9 @@ const BlogIndex = ({ data }) => {
             }}
           />
           <p>
-            Hi! My name is Adrian Mark Clave Perea. I'm a software engineer from
-            the Philippines, currently based in Tokyo.
+            Hi! My name is {author.name}. I'm a full stack software engineer
+            from the Philippines, currently involved with Fujitsu Client
+            Computing Limited in Tokyo, Japan.
           </p>
 
           <p>
@@ -95,8 +99,23 @@ const BlogIndex = ({ data }) => {
 
           <p>
             My preferred programming language is Python, but I am also adept in
-            full-stack JavaScript.
+            JavaScript. I am versed with creating web applications using
+            React.js and Express. I am also experienced in creating data science
+            analyses with pandas, matplotlib, and tensorflow.
           </p>
+
+          <p>
+            If you have projects that need data manipulation with visualization
+            to match, I'm your guy!
+          </p>
+
+          <div className={indexStyles.socialIcons}>
+            <IconContext.Provider value={{ className: indexStyles.socialIcon }}>
+              <FaTwitter />
+              <FaGithub />
+              <FaLinkedin />
+            </IconContext.Provider>
+          </div>
         </div>
       </section>
     </>

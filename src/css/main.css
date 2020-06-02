@@ -24,7 +24,7 @@ body {
 }
 
 a {
-  color: var(--font-color-emphasis);
+  color: var(--font-color-accent);
 }
 
 h1, h2, p {

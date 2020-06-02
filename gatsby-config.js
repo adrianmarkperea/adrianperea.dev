@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Adrian Perea`,
     author: {
-      name: `Adrian Perea`,
+      name: `Adrian Mark Clave Perea`,
       firstName: `Adrian`,
       lastName: `Perea`,
       summary: `who lives and works in San Francisco building useful things.`,
