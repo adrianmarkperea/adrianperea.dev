@@ -16,6 +16,7 @@ module.exports = {
     social: {
       twitter: `adrianmarkperea`,
       github: `adrianmarkperea`,
+      linkedin: `adrian-perea`,
     },
   },
   plugins: [

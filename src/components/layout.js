@@ -21,18 +21,18 @@ const Header = () => (
   </header>
 )
 
-const Footer = () => (
+const Footer = ({ social }) => (
   <footer className={layoutStyles.footer}>
     <div className={layoutStyles.footerLinks}>
       <div>
         <IconContext.Provider value={{ className: layoutStyles.socialIcon }}>
-          <a href="https://twitter.com/adrianmarkperea">
+          <a href={`https://twitter.com/${social.twitter}`}>
             <FaTwitter />
           </a>
-          <a href="https://github.com/adrianmarkperea">
+          <a href={`https://github.com/${social.github}`}>
             <FaGithub />
           </a>
-          <a href="https://www.linkedin.com/in/adrian-perea/">
+          <a href={`https://www.linkedin.com/in/${social.linkedin}/`}>
             <FaLinkedin />
           </a>
         </IconContext.Provider>
@@ -43,7 +43,7 @@ const Footer = () => (
   </footer>
 )
 
-const Layout = ({ title, children }) => {
+const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query LayoutQuery {
       site {
@@ -51,11 +51,14 @@ const Layout = ({ title, children }) => {
           social {
             twitter
             github
+            linkedin
           }
         }
       }
     }
   `)
+
+  const { social } = data.site.siteMetadata
 
   React.useEffect(() => {
     const defineVh = () => {
@@ -71,7 +74,7 @@ const Layout = ({ title, children }) => {
     <>
       <Header />
       <main>{children}</main>
-      <Footer />
+      <Footer social={social} />
     </>
   )
 }
