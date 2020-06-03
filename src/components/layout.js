@@ -3,8 +3,7 @@ import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
 import "../css/main.css"
 import layoutStyles from "../css/layout.module.css"
-import { IconContext } from "react-icons"
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa"
+import Social from "./social"
 
 const Header = () => (
   <header>
@@ -21,22 +20,10 @@ const Header = () => (
   </header>
 )
 
-const Footer = ({ social }) => (
+const Footer = () => (
   <footer className={layoutStyles.footer}>
     <div className={layoutStyles.footerLinks}>
-      <div>
-        <IconContext.Provider value={{ className: layoutStyles.socialIcon }}>
-          <a href={`https://twitter.com/${social.twitter}`}>
-            <FaTwitter />
-          </a>
-          <a href={`https://github.com/${social.github}`}>
-            <FaGithub />
-          </a>
-          <a href={`https://www.linkedin.com/in/${social.linkedin}/`}>
-            <FaLinkedin />
-          </a>
-        </IconContext.Provider>
-      </div>
+      <Social />
       <a href="rss">rss</a>
     </div>
     <p>All materials &copy; Adrian Perea 2020</p>
@@ -58,8 +45,6 @@ const Layout = ({ children }) => {
     }
   `)
 
-  const { social } = data.site.siteMetadata
-
   React.useEffect(() => {
     const defineVh = () => {
       let vh = window.innerHeight * 0.01
@@ -74,7 +59,7 @@ const Layout = ({ children }) => {
     <>
       <Header />
       <main>{children}</main>
-      <Footer social={social} />
+      <Footer />
     </>
   )
 }

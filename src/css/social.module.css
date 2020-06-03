@@ -1,0 +1,6 @@
+.socialIcon {
+  color: var(--font-color-body);
+  font-size: 1.4em;
+  margin-right: 0.5em;
+  transition: color 0.2s;
+}

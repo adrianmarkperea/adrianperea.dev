@@ -5,8 +5,9 @@ import Mutating from "../components/mutating"
 import Layout from "../components/layout"
 import { Link } from "gatsby"
 import { IconContext } from "react-icons"
-import { FaChevronDown, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa"
+import { FaChevronDown } from "react-icons/fa"
 import Image from "gatsby-image"
+import Social from "../components/social"
 
 const getRandomDescription = descriptions => {
   return descriptions[Math.floor(Math.random() * descriptions.length)]
@@ -131,17 +132,7 @@ const BlogIndex = ({ data }) => {
           </p>
 
           <div className={indexStyles.socialIcons}>
-            <IconContext.Provider value={{ className: indexStyles.socialIcon }}>
-              <a href="https://twitter.com/adrianmarkperea">
-                <FaTwitter />
-              </a>
-              <a href="https://github.com/adrianmarkperea">
-                <FaGithub />
-              </a>
-              <a href="https://www.linkedin.com/in/adrian-perea/">
-                <FaLinkedin />
-              </a>
-            </IconContext.Provider>
+            <Social />
           </div>
         </div>
       </section>
