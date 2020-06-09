@@ -1,0 +1,13 @@
+.container {
+  padding: 0 1rem;
+}
+
+.profilePic {
+  border-radius: 50%;
+  float: left;
+  margin-right: 1rem;
+}
+
+.description {
+  margin: 0 !important;
+}
