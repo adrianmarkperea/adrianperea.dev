@@ -36,9 +36,15 @@ h2 {
 }
 
 .container {
-  padding: 1.8em 1.4em;
+  padding: 0 1.4em;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .title {
   margin-bottom: 2rem;
+}
+
+.page-section {
+  padding-top: 4.5rem;
 }

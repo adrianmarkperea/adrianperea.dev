@@ -13,7 +13,8 @@
   width: 100%;
   align-items: center;
   justify-content: space-between;
-  padding: 1.25em;
+  padding-top: 1.25em;
+  padding-bottom: 1.25em;
 }
 
 .brand {
@@ -41,7 +42,8 @@
 }
 
 .footer {
-  padding: 2.4em 1.8em;
+  padding-top: 2.4rem;
+  padding-bottom: 2.4rem;
 }
 
 .footerLinks {

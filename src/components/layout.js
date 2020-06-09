@@ -7,12 +7,14 @@ import Social from "./social"
 const Header = () => (
   <header>
     <nav className={layoutStyles.nav}>
-      <div className={layoutStyles.navContainer}>
-        <div className={layoutStyles.brand}>🐸</div>
-        <div className={layoutStyles.navLinks}>
-          <Link to="/blog">Blog</Link>
-          <Link to="/projects">Projects</Link>
-          <button className={layoutStyles.modeToggler}>🌙</button>
+      <div className="container">
+        <div className={layoutStyles.navContainer}>
+          <div className={layoutStyles.brand}>🐸</div>
+          <div className={layoutStyles.navLinks}>
+            <Link to="/blog">Blog</Link>
+            <Link to="/projects">Projects</Link>
+            <button className={layoutStyles.modeToggler}>🌙</button>
+          </div>
         </div>
       </div>
     </nav>
@@ -25,11 +27,13 @@ const Main = ({ children }) => (
 
 const Footer = () => (
   <footer className={layoutStyles.footer}>
-    <div className={layoutStyles.footerLinks}>
-      <Social />
-      <a href="rss">rss</a>
+    <div className="container">
+      <div className={layoutStyles.footerLinks}>
+        <Social />
+        <a href="rss">rss</a>
+      </div>
+      <p>All materials &copy; Adrian Perea 2020</p>
     </div>
-    <p>All materials &copy; Adrian Perea 2020</p>
   </footer>
 )
 

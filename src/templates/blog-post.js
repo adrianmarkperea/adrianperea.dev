@@ -16,38 +16,40 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <div className="container">
-        <article className={blogPostStyles.article}>
-          <header>
-            <h1>{post.frontmatter.title}</h1>
-            <small>{post.frontmatter.date}</small>
-          </header>
-          <section dangerouslySetInnerHTML={{ __html: post.html }} />
-          <hr className={blogPostStyles.hr} />
-          <footer>
-            <Bio />
-          </footer>
-        </article>
-      </div>
+      <section className="page-section">
+        <div className="container">
+          <article className={blogPostStyles.article}>
+            <header>
+              <h1>{post.frontmatter.title}</h1>
+              <small>{post.frontmatter.date}</small>
+            </header>
+            <section dangerouslySetInnerHTML={{ __html: post.html }} />
+            <hr className={blogPostStyles.hr} />
+            <footer>
+              <Bio />
+            </footer>
+          </article>
+        </div>
 
-      <nav className="container">
-        <ul className={blogPostStyles.navList}>
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
+        <nav className="container">
+          <ul className={blogPostStyles.navList}>
+            <li>
+              {previous && (
+                <Link to={previous.fields.slug} rel="prev">
+                  ← {previous.frontmatter.title}
+                </Link>
+              )}
+            </li>
+            <li>
+              {next && (
+                <Link to={next.fields.slug} rel="next">
+                  {next.frontmatter.title} →
+                </Link>
+              )}
+            </li>
+          </ul>
+        </nav>
+      </section>
     </Layout>
   )
 }

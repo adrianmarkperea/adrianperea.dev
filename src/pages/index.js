@@ -90,7 +90,10 @@ const BlogIndex = ({ data }) => {
         </IconContext.Provider>
       </div>
 
-      <section ref={descriptionRef} className={indexStyles.aboutMeSection}>
+      <section
+        ref={descriptionRef}
+        className={`container ${indexStyles.aboutMeSection}`}
+      >
         <h2>About Me</h2>
         <div className={indexStyles.aboutMe}>
           <Image
@@ -121,9 +124,10 @@ const BlogIndex = ({ data }) => {
 
           <p>
             My preferred programming language is Python, but I am also adept in
-            JavaScript. I am versed with creating web applications using
-            React.js and Express. I am also experienced in creating data science
-            analyses with pandas, matplotlib, and tensorflow.
+            JavaScript. I am experienced in creating data science analyses with
+            pandas, matplotlib, and tensorflow. In addition, I am versed with
+            creating full stack web applications using React.js and Express, and
+            SQL/NoSQL.
           </p>
 
           <p>
@@ -138,9 +142,11 @@ const BlogIndex = ({ data }) => {
       </section>
 
       <section className={indexStyles.contactSection}>
-        <h2>Send a message</h2>
-        <small>and let's make something happen</small>
-        <ContactForm />
+        <div class="container">
+          <h2>Send a message</h2>
+          <small>and let's make something happen</small>
+          <ContactForm />
+        </div>
       </section>
     </Layout>
   )

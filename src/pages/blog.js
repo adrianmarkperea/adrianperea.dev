@@ -28,10 +28,12 @@ const Blog = ({ data }) => {
   return (
     <Layout>
       <SEO title="All posts" />
-      <div className="container">
-        <h2 className="title">Articles</h2>
-        {content}
-      </div>
+      <section className="page-section">
+        <div className="container">
+          <h2 className="title">Articles</h2>
+          {content}
+        </div>
+      </section>
     </Layout>
   )
 }

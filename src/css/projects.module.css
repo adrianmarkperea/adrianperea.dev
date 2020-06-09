@@ -1,3 +1,7 @@
+.section {
+  padding-top: 4.5rem;
+}
+
 .tagContainer {
   display: flex;
   flex-flow: row wrap;

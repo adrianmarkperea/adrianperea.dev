@@ -8,7 +8,7 @@
 }
 
 .heroText h1 {
-  font-size: 2.5em;
+  font-size: min(max(2.5rem, 4vw), 6rem);
   margin: 0;
 }
 
@@ -44,7 +44,8 @@
 }
 
 .aboutMeSection {
-  padding: 1.8em 1.8em 3.2em;
+  padding-top: 1.8em;
+  padding-bottom: 3.2em;
 }
 
 .aboutMeSection h2 {
@@ -78,7 +79,8 @@
 }
 
 .contactSection {
-  padding: 3em 1.8em;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   background: var(--font-color-accent);
 }
 
@@ -90,10 +92,11 @@
 .contactForm {
   background: white;
   color: var(--font-color-body);
-  padding: 1.4em;
+  padding: 2.2rem 1.4rem 1.4rem;
   border-radius: 8px;
   box-shadow: 0.5em 1.25em 1.75em 0 rgba(0,0,0,.3);
   margin-top: 1.5em;
+  max-width: 420px;
 }
 
 .contactForm label {
@@ -133,4 +136,46 @@
   30% { transform: translateY(-4px); }
   50% { transform: translateY(0); }
   100% { transform: translateY(0); }
+}
+
+@media (min-width: 1190px) {
+  .hero {
+    top: -60px;
+  }
+
+  .aboutMeSection {
+    padding-top: 1.8em;
+    padding-bottom: 5em;
+  }
+
+  .aboutMeSection h2,
+  .contactSection h2 {
+    font-size: 2rem;
+  }
+
+  .aboutMe p {
+    font-size: 1.3rem;
+  }
+
+  .contactSection {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .contactSection small {
+    font-size: 0.9rem;
+  }
+
+  .contactForm label {
+    font-size: 0.9rem;
+  }
+
+  .contactForm input,
+  .contactForm textarea {
+    margin: 0.4rem 0 1.2rem;
+  }
+
+  .contactForm button {
+    font-size: 0.9rem;
+  }
 }

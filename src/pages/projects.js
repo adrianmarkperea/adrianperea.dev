@@ -33,10 +33,12 @@ const Projects = () => {
   return (
     <Layout>
       <SEO title="Projects" />
-      <div className="container">
-        <h2 className="title">Projects</h2>
-        {content}
-      </div>
+      <section className="page-section">
+        <div className="container">
+          <h2 className="title">Projects</h2>
+          {content}
+        </div>
+      </section>
     </Layout>
   )
 }
