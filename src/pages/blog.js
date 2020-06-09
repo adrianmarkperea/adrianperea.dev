@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import blogStyles from "../css/blog.module.css"
-import Item from "../components/list"
+import Item from "../components/item"
 
 const Blog = ({ data }) => {
   const posts = data.allMarkdownRemark.edges
