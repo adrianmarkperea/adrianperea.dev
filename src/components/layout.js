@@ -31,20 +31,6 @@ const Footer = () => (
 )
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query LayoutQuery {
-      site {
-        siteMetadata {
-          social {
-            twitter
-            github
-            linkedin
-          }
-        }
-      }
-    }
-  `)
-
   React.useEffect(() => {
     const defineVh = () => {
       let vh = window.innerHeight * 0.01
