@@ -36,6 +36,10 @@
   font-size: 1.2em;
 }
 
+.main {
+  margin-top: 55px;
+}
+
 .footer {
   padding: 2.4em 1.8em;
 }

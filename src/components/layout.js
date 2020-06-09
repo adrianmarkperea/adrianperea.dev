@@ -1,6 +1,5 @@
 import React from "react"
 import { Link } from "gatsby"
-import { useStaticQuery, graphql } from "gatsby"
 import "../css/main.css"
 import layoutStyles from "../css/layout.module.css"
 import Social from "./social"
@@ -18,6 +17,10 @@ const Header = () => (
       </div>
     </nav>
   </header>
+)
+
+const Main = ({ children }) => (
+  <div className={layoutStyles.main}>{children}</div>
 )
 
 const Footer = () => (
@@ -44,7 +47,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header />
-      <main>{children}</main>
+      <Main>{children}</Main>
       <Footer />
     </>
   )

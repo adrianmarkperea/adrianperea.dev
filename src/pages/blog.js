@@ -10,7 +10,7 @@ const Blog = ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges
 
   const content = (
-    <React.Fragment>
+    <>
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (
@@ -31,12 +31,13 @@ const Blog = ({ data, location }) => {
           </article>
         )
       })}
-    </React.Fragment>
+    </>
   )
 
   return (
     <Layout title={siteTitle}>
       <SEO title="All posts" />
+      <h2 style={{ marginTop: 100 }}>Articles</h2>
       {content}
     </Layout>
   )
