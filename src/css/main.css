@@ -34,3 +34,11 @@ h1, h2, h3, p {
 h2 {
   font-size: 1.8em;
 }
+
+.container {
+  padding: 1.8em;
+}
+
+.title {
+  margin-bottom: 2rem;
+}

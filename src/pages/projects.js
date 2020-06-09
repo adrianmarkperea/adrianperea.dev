@@ -33,8 +33,8 @@ const Projects = () => {
   return (
     <Layout>
       <SEO title="Projects" />
-      <div className={projectsStyles.container}>
-        <h2 className={projectsStyles.title}>Projects</h2>
+      <div className="container">
+        <h2 className="title">Projects</h2>
         {content}
       </div>
     </Layout>

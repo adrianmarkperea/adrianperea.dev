@@ -28,8 +28,8 @@ const Blog = ({ data }) => {
   return (
     <Layout>
       <SEO title="All posts" />
-      <div className={blogStyles.container}>
-        <h2 className={blogStyles.title}>Articles</h2>
+      <div className="container">
+        <h2 className="title">Articles</h2>
         {content}
       </div>
     </Layout>
