@@ -14,72 +14,6 @@ But it was repetitive. Each shape (such as a rectangle or an oval) had a differe
 
 The code looked something like this:
 
-```jsx
-let Rectangle = {
-  resizeTopLeft(position, size, preserveAspect, dx, dy) {
-    // 10 repetitive lines of math
-  },
-  resizeTopRight(position, size, preserveAspect, dx, dy) {
-    // 10 repetitive lines of math
-  },
-  resizeBottomLeft(position, size, preserveAspect, dx, dy) {
-    // 10 repetitive lines of math
-  },
-  resizeBottomRight(position, size, preserveAspect, dx, dy) {
-    // 10 repetitive lines of math
-  },
-};
-
-let Oval = {
-  resizeLeft(position, size, preserveAspect, dx, dy) {
-    // 10 repetitive lines of math
-  },
-  resizeRight(position, size, preserveAspect, dx, dy) {
-    // 10 repetitive lines of math
-  },
-  resizeTop(position, size, preserveAspect, dx, dy) {
-    // 10 repetitive lines of math
-  },
-  resizeBottom(position, size, preserveAspect, dx, dy) {
-    // 10 repetitive lines of math
-  },
-};
-
-let Header = {
-  resizeLeft(position, size, preserveAspect, dx, dy) {
-    // 10 repetitive lines of math
-  },
-  resizeRight(position, size, preserveAspect, dx, dy) {
-    // 10 repetitive lines of math
-  },  
-}
-
-let TextBlock = {
-  resizeTopLeft(position, size, preserveAspect, dx, dy) {
-    // 10 repetitive lines of math
-  },
-  resizeTopRight(position, size, preserveAspect, dx, dy) {
-    // 10 repetitive lines of math
-  },
-  resizeBottomLeft(position, size, preserveAspect, dx, dy) {
-    // 10 repetitive lines of math
-  },
-  resizeBottomRight(position, size, preserveAspect, dx, dy) {
-    // 10 repetitive lines of math
-  },
-};
-
-const hello = () => {
-  console.log('I am a function!');
-}
-
-class Point {
-  constructor() {
-    this.x = 0;
-    this.y = 0;
-  }
-}
-```
 
 That repetitive math was really bothering me.
 
@@ -93,31 +27,6 @@ I had an idea.
 
 We could *remove all duplication* by grouping the code like this instead:
 
-```jsx
-let Directions = {
-  top(...) {
-    // 5 unique lines of math
-  },
-  left(...) {
-    // 5 unique lines of math
-  },
-  bottom(...) {
-    // 5 unique lines of math
-  },
-  right(...) {
-    // 5 unique lines of math
-  },
-};
-
-let Shapes = {
-  Oval(...) {
-    // 5 unique lines of math
-  },
-  Rectangle(...) {
-    // 5 unique lines of math
-  },
-}
-```
 
 and then composing their behaviors:
 
