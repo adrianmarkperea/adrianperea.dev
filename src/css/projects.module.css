@@ -6,20 +6,6 @@
   margin-bottom: 2rem;
 }
 
-.article header {
-  margin-bottom: 0.6rem;
-}
-
-.article h3 {
-  font-size: 1.6rem;
-  margin-bottom: 0.6rem;
-  font-weight: 900;
-}
-
-.article a {
-  text-decoration: none;
-}
-
 .tagContainer {
   display: flex;
   flex-flow: row wrap;
@@ -31,9 +17,4 @@
   border-radius: 4px;
   color: #5f5f5f;
   background: #f2f2f2;
-}
-
-.article p {
-  margin-bottom: 1.6rem;
-  line-height: 1.8;
 }
