@@ -1,0 +1,26 @@
+.container {
+  padding: 1.8em;
+}
+
+.title {
+  margin-bottom: 2rem;
+}
+
+.article header {
+  margin-bottom: 0.6rem;
+}
+
+.article h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0.6rem;
+  font-weight: 900;
+}
+
+.article a {
+  text-decoration: none;
+}
+
+.article p {
+  margin-bottom: 1.6rem;
+  line-height: 1.8;
+}

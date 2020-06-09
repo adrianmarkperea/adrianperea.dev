@@ -1,12 +1,11 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import blogStyles from "../css/blog.module.css"
 
-const Blog = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.title
+const Blog = ({ data }) => {
   const posts = data.allMarkdownRemark.edges
 
   const content = (
@@ -14,7 +13,7 @@ const Blog = ({ data, location }) => {
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (
-          <article key={node.fields.slug}>
+          <article className={blogStyles.article} key={node.fields.slug}>
             <header>
               <h3>
                 <Link to={node.fields.slug}>{title}</Link>
@@ -35,10 +34,12 @@ const Blog = ({ data, location }) => {
   )
 
   return (
-    <Layout title={siteTitle}>
+    <Layout>
       <SEO title="All posts" />
-      <h2 style={{ marginTop: 100 }}>Articles</h2>
-      {content}
+      <div className={blogStyles.container}>
+        <h2 className={blogStyles.title}>Articles</h2>
+        {content}
+      </div>
     </Layout>
   )
 }
