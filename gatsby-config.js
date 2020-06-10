@@ -124,13 +124,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Adrian Perea's Dev Blog`,
+        short_name: `A. Perea Dev`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `content/assets/favicon.png`,
+        theme_color_in_head: false,
       },
     },
     `gatsby-plugin-react-helmet`,
