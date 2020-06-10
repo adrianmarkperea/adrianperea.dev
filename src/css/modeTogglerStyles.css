@@ -11,6 +11,31 @@
   cursor: pointer;
 }
 
+.modeToggler div::before {
+  content: "";
+  position:absolute;
+  width: 15px;
+  height: 15px;
+  background: white;
+  border-radius: 50%;
+  transition: opacity 0.1s;
+  top: -2px;
+  right: -3px;
+  opacity: 0;
+}
+
+.modeToggler div::after {
+  content: "";
+  position:absolute;
+  width: 3px;
+  height: 3px;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.1s;
+}
+
 body.light .modeToggler div {
   width: 20px;
   height: 20px;
@@ -20,33 +45,28 @@ body.light .modeToggler div {
 }
 
 body.light .modeToggler div::before {
-  content: "";
-  position:absolute;
-  width: 15px;
-  height: 15px;
-  background: white;
-  border-radius: 50%;
-  top: -2px;
-  right: -3px;
+  opacity: 1;
 }
 
 body.dark .modeToggler div {
   width: 8px;
   height: 8px;
-  background: hsl(0, 0%, 100%);
+  background: rgba(255, 255, 255, 0.8);
   border-radius: 50%;
   position: relative;
+  transition: background-color 0.2s;
 }
 
 body.dark .modeToggler div::after {
-  content: "";
-  position:absolute;
-  width: 3px;
-  height: 3px;
-  top: 50%;
-  left: 50%;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow: 0px -7px white, 7px 0 white, 0 7px white, -7px 0 white,
-              5px -5px white, 5px 5px white, -5px 5px white, -5px -5px white;
+  box-shadow: 0px -7px rgba(255, 255, 255, 0.8), 7px 0 rgba(255, 255, 255, 0.8), 0 7px rgba(255, 255, 255, 0.8), -7px 0 rgba(255, 255, 255, 0.8),
+              5px -5px rgba(255, 255, 255, 0.8), 5px 5px rgba(255, 255, 255, 0.8), -5px 5px rgba(255, 255, 255, 0.8), -5px -5px rgba(255, 255, 255, 0.8);
+}
+
+body.dark .modeToggler div:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+body.dark .modeToggler div:hover::after {
+  box-shadow: 0px -7px rgba(255, 255, 255, 1), 7px 0 rgba(255, 255, 255, 1), 0 7px rgba(255, 255, 255, 1), -7px 0 rgba(255, 255, 255, 1),
+              5px -5px rgba(255, 255, 255, 1), 5px 5px rgba(255, 255, 255, 1), -5px 5px rgba(255, 255, 255, 1), -5px -5px rgba(255, 255, 255, 1);
 }
