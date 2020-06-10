@@ -7,6 +7,11 @@
   height: calc(var(--vh, 1vh) * 100 - 55px);
 }
 
+.heroText {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
 .heroText h1 {
   font-size: min(max(2.5rem, 4vw), 6rem);
   margin: 0;
@@ -35,13 +40,14 @@
   animation-fill-mode: forwards;
   position: absolute;
   bottom: 20px;
-  display: pointer;
 }
 
 .down button {
   background: none;
   border: 0;
+  cursor: pointer;
 }
+
 
 .aboutMeSection {
   padding-top: 1.8em;

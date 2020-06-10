@@ -37,6 +37,7 @@ h2 {
 
 .container {
   padding: 0 1.4em;
+  width: 100%;
   max-width: 700px;
   margin: 0 auto;
 }

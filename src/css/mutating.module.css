@@ -3,7 +3,7 @@
 }
 
 .main {
-  font-size: min(max(1.1rem, 4vw), 2.5rem);
+  font-size: min(max(1.1rem, 4vw), 2.3rem);
   margin-bottom: 0.2em;
 }
 
@@ -37,4 +37,9 @@
 @keyframes fade-in {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+.githubIcon {
+  color: var(--font-color-body);
+  font-size: 1rem;
 }

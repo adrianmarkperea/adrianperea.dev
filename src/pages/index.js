@@ -73,12 +73,14 @@ const BlogIndex = ({ data }) => {
   return (
     <Layout>
       <div className={indexStyles.hero}>
-        <div className={indexStyles.heroText}>
-          <h1>
-            Hi, I'm{` `}
-            <span className={indexStyles.name}>{author.firstName}</span>
-          </h1>
-          <Mutating text={description} />
+        <div className="container">
+          <div className={indexStyles.heroText}>
+            <h1>
+              Hi, I'm{` `}
+              <span className={indexStyles.name}>{author.firstName}</span>
+            </h1>
+            <Mutating text={description} />
+          </div>
         </div>
 
         <IconContext.Provider value={{ color: "#649d66" }}>

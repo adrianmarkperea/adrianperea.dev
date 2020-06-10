@@ -1,23 +1,10 @@
 import React from "react"
 import mutatingStyles from "../css/mutating.module.css"
-import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
 import { createSimulation } from "../utils/simulation"
+import { IconContext } from "react-icons"
+import { FaGithub } from "react-icons/fa"
 
 const Info = ({ stats }) => {
-  // TODO: Remove static query and just use a font icon
-  const data = useStaticQuery(graphql`
-    query {
-      avatar: file(absolutePath: { regex: "/GitHub-Mark-32px.png/" }) {
-        childImageSharp {
-          fixed(width: 16, height: 16) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-    }
-  `)
-
   return (
     <div className={mutatingStyles.info}>
       <ul className={mutatingStyles.stats}>
@@ -39,7 +26,9 @@ const Info = ({ stats }) => {
         href="https://github.com/adrianmarkperea/genie"
       >
         <span>genie.js</span>
-        <Image fixed={data.avatar.childImageSharp.fixed} />
+        <IconContext.Provider value={{ className: mutatingStyles.githubIcon }}>
+          <FaGithub />
+        </IconContext.Provider>
       </a>
     </div>
   )
