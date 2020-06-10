@@ -3,7 +3,7 @@ import SEO from "../components/seo"
 import indexStyles from "../css/index.module.css"
 import Mutating from "../components/mutating"
 import Layout from "../components/layout"
-import { graphql, Link } from "gatsby"
+import { graphql, Link, navigate } from "gatsby"
 import { IconContext } from "react-icons"
 import { FaChevronDown } from "react-icons/fa"
 import Image from "gatsby-image"
@@ -23,9 +23,31 @@ const ContactForm = () => {
   const [email, setEmail] = React.useState("")
   const [message, setMessage] = React.useState("")
 
+  const sendToFormHandler = () => {
+    return fetch("https://submit-form.com/v19LBL6qXhQA4XBx8cHfn", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({ name, email, message }),
+    })
+  }
+
+  const handleSubmit = async e => {
+    e.preventDefault()
+
+    try {
+      await sendToFormHandler()
+      navigate("/form-submitted/")
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
   return (
     <>
-      <form className={indexStyles.contactForm}>
+      <form className={indexStyles.contactForm} onSubmit={handleSubmit}>
         <div>
           <label>
             Name
@@ -53,7 +75,7 @@ const ContactForm = () => {
           <br />
           <textarea
             value={message}
-            rows={4}
+            rows={6}
             onChange={e => setMessage(e.target.value)}
           />
         </label>
