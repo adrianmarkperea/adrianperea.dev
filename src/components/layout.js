@@ -9,7 +9,9 @@ const Header = () => (
     <nav className={layoutStyles.nav}>
       <div className="container">
         <div className={layoutStyles.navContainer}>
-          <div className={layoutStyles.brand}>🐸</div>
+          <Link to="/" className={layoutStyles.brand}>
+            adrianperea.dev
+          </Link>
           <div className={layoutStyles.navLinks}>
             <Link to="/blog">Blog</Link>
             <Link to="/projects">Projects</Link>
