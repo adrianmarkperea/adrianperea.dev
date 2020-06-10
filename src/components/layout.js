@@ -30,7 +30,7 @@ const Footer = () => (
     <div className="container">
       <div className={layoutStyles.footerLinks}>
         <Social />
-        <a href="rss">rss</a>
+        <a href="/rss.xml">rss</a>
       </div>
       <p>All materials &copy; Adrian Perea 2020</p>
     </div>
