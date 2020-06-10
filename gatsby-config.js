@@ -41,9 +41,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
-              wrapperStyle: "margin-left: -1.4rem; margin-right: -1.4rem;",
-              // TODO: Change maxWidth to specified container size (do later)
+              maxWidth: 700,
             },
           },
           {
