@@ -13,7 +13,7 @@
 }
 
 .heroText h1 {
-  font-size: min(max(2.5rem, 4vw), 6rem);
+  font-size: min(max(2.2rem, 6vw), 5rem);
   margin: 0;
 }
 
@@ -65,7 +65,7 @@
 
 .aboutMe p {
   line-height: 1.8;
-  font-size: 0.9em;
+  font-size: min(max(0.9em, 4vw), 1.3rem);
   margin-bottom: 1em;
 }
 
@@ -152,15 +152,6 @@
   .aboutMeSection {
     padding-top: 1.8em;
     padding-bottom: 5em;
-  }
-
-  .aboutMeSection h2,
-  .contactSection h2 {
-    font-size: 2rem;
-  }
-
-  .aboutMe p {
-    font-size: 1.3rem;
   }
 
   .contactSection {

@@ -32,7 +32,7 @@ h1, h2, h3, p {
 }
 
 h2 {
-  font-size: 1.8em;
+  font-size: min(max(1.8rem, 4vw), 2rem);
 }
 
 .container {
@@ -43,7 +43,8 @@ h2 {
 }
 
 .title {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+  font-weight: 900;
 }
 
 .page-section {
