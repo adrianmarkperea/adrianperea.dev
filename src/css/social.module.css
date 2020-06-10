@@ -4,3 +4,7 @@
   margin-right: 0.5em;
   transition: color 0.2s;
 }
+
+.socialIcon:hover {
+  color: var(--font-color-accent);
+}
