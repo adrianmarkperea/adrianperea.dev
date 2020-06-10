@@ -5,16 +5,13 @@ module.exports = {
       name: `Adrian Mark Clave Perea`,
       firstName: `Adrian`,
       lastName: `Perea`,
-      summary: `who lives and works in San Francisco building useful things.`,
       descriptions: [
-        `and i write software for fun`,
+        `and i write applications for fun`,
         `and i do artificial intelligence`,
       ],
     },
-    // TODO: Remove this
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    // TODO: Change this
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    description: `Tutorials on AI, Edge Computing, and the Modern Web.`,
+    siteUrl: `https://www.adrianperea.dev/`,
     social: {
       twitter: `adrianmarkperea`,
       github: `adrianmarkperea`,

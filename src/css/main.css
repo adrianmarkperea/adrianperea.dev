@@ -2,6 +2,10 @@
   --font-color-accent: #649d66;
 }
 
+body {
+  transition: all 0.2s;
+}
+
 body.light {
   --bg-color: #ffffff;
   --font-color-body: rgba(0, 0, 0, 0.8);

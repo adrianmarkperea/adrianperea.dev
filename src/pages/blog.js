@@ -1,8 +1,7 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import blogStyles from "../css/blog.module.css"
 import Item from "../components/item"
 
 const Blog = ({ data }) => {
@@ -14,6 +13,7 @@ const Blog = ({ data }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (
           <Item
+            key={node.fields.slug}
             title={title}
             path={node.fields.slug}
             isInternal={true}
@@ -27,7 +27,7 @@ const Blog = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="All posts" />
+      <SEO title="Blog - Adrian Perea" />
       <section className="page-section">
         <div className="container">
           <h2 className="title">Articles</h2>

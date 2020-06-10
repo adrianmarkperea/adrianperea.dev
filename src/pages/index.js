@@ -3,7 +3,7 @@ import SEO from "../components/seo"
 import indexStyles from "../css/index.module.css"
 import Mutating from "../components/mutating"
 import Layout from "../components/layout"
-import { Link } from "gatsby"
+import { graphql, Link } from "gatsby"
 import { IconContext } from "react-icons"
 import { FaChevronDown } from "react-icons/fa"
 import Image from "gatsby-image"
@@ -72,6 +72,7 @@ const BlogIndex = ({ data }) => {
 
   return (
     <Layout>
+      <SEO title="Adrian Perea" />
       <div className={indexStyles.hero}>
         <div className="container">
           <div className={indexStyles.heroText}>
@@ -119,9 +120,8 @@ const BlogIndex = ({ data }) => {
             <a href="https://genie-phrase-guesser.netlify.app/">
               simulations
             </a>{" "}
-            and <a href="#">visualizations</a>. I also{" "}
-            <Link to="/blog">write</Link> about data science, edge computing,
-            and the modern web.
+            and visualizations. I also <Link to="/blog">write</Link> about
+            Artificial Intelligence, edge computing, and the modern web.
           </p>
 
           <p>

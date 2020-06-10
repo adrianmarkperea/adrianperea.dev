@@ -47,7 +47,7 @@ const Mutating = ({ text }) => {
   React.useEffect(() => {
     const simulation = createSimulation(text, onCalculateFitness)
     simulation.start()
-  }, [onCalculateFitness])
+  }, [text, onCalculateFitness])
 
   if (!stats) {
     return null

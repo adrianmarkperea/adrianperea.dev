@@ -8,27 +8,26 @@ import Item from "../components/item"
 const Projects = () => {
   return (
     <Layout>
-      <SEO title="Projects" />
+      <SEO title="Projects - Adrian Perea" />
       <section className="page-section">
         <div className="container">
           <h2 className="title">Projects</h2>
           {projects.map(project => {
             return (
-              <>
-                <Item
-                  title={project.title}
-                  path={project.path}
-                  isInternal={false}
-                  headerContent={
-                    <div className={projectsStyles.tagContainer}>
-                      {project.tags.map(tag => (
-                        <small key={`${project.title}_${tag}`}>{tag}</small>
-                      ))}
-                    </div>
-                  }
-                  description={project.description}
-                />
-              </>
+              <Item
+                key={project.title}
+                title={project.title}
+                path={project.path}
+                isInternal={false}
+                headerContent={
+                  <div className={projectsStyles.tagContainer}>
+                    {project.tags.map(tag => (
+                      <small key={`${project.title}_${tag}`}>{tag}</small>
+                    ))}
+                  </div>
+                }
+                description={project.description}
+              />
             )
           })}
         </div>
