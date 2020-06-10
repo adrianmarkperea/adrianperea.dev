@@ -6,37 +6,31 @@ import projects from "../../content/projects/projects"
 import Item from "../components/item"
 
 const Projects = () => {
-  const content = (
-    <>
-      {projects.map(project => {
-        return (
-          <>
-            <Item
-              title={project.title}
-              path={project.path}
-              isInternal={false}
-              headerContent={
-                <div class={projectsStyles.tagContainer}>
-                  {project.tags.map(tag => (
-                    <small key={`${project.title}_${tag}`}>{tag}</small>
-                  ))}
-                </div>
-              }
-              description={project.description}
-            />
-          </>
-        )
-      })}
-    </>
-  )
-
   return (
     <Layout>
       <SEO title="Projects" />
       <section className="page-section">
         <div className="container">
           <h2 className="title">Projects</h2>
-          {content}
+          {projects.map(project => {
+            return (
+              <>
+                <Item
+                  title={project.title}
+                  path={project.path}
+                  isInternal={false}
+                  headerContent={
+                    <div className={projectsStyles.tagContainer}>
+                      {project.tags.map(tag => (
+                        <small key={`${project.title}_${tag}`}>{tag}</small>
+                      ))}
+                    </div>
+                  }
+                  description={project.description}
+                />
+              </>
+            )
+          })}
         </div>
       </section>
     </Layout>

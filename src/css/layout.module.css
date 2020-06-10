@@ -1,11 +1,10 @@
-
 .nav {
   position: fixed;
   width: 100%;
   box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.2);
   top: 0 !important;
   z-index: 1000;
-  background: white;
+  background: var(--bg-color);
 }
 
 .navContainer {
@@ -25,6 +24,11 @@
   color: var(--font-color-body);
 }
 
+.navLinks {
+  display: flex;
+  align-items: center;
+}
+
 .navLinks > * {
   margin-left: 1em;
 }
@@ -33,12 +37,6 @@
   color: var(--font-color-body);
   text-decoration: none;
   font-size: 0.9em;
-}
-
-.modeToggler {
-  background: none;
-  border: none;
-  font-size: 1.2em;
 }
 
 .main {

@@ -29,7 +29,7 @@ export function createSimulation(phrase, onCalculateFitness) {
   return new MutationSimulation({
     prototype,
     data: phrase,
-    popSize: 400,
+    popSize: 1000,
     onCalculateFitness,
   })
 }

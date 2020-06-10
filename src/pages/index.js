@@ -144,7 +144,7 @@ const BlogIndex = ({ data }) => {
       </section>
 
       <section className={indexStyles.contactSection}>
-        <div class="container">
+        <div className="container">
           <h2>Send a message</h2>
           <small>and let's make something happen</small>
           <ContactForm />

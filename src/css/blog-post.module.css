@@ -48,7 +48,7 @@
 }
 
 .hr {
-  background: rgba(0, 0, 0, 0.2);
+  background: var(--hr-bg);
   height: 1px;
   border: 0;
   margin-bottom: 1.8rem;

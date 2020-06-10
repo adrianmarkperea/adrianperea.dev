@@ -87,22 +87,22 @@
 .contactSection {
   padding-top: 2rem;
   padding-bottom: 2rem;
-  background: var(--font-color-accent);
+  background: var(--contact-bg);
 }
 
 .contactSection h2,
 .contactSection small {
-  color: white;
+  color: var(--contact-color);
 }
 
 .contactForm {
-  background: white;
   color: var(--font-color-body);
   padding: 2.2rem 1.4rem 1.4rem;
   border-radius: 8px;
-  box-shadow: 0.5em 1.25em 1.75em 0 rgba(0,0,0,.3);
+  box-shadow: 0.5em 0.5em 1.25em 0 rgba(0,0,0,.3);
   margin-top: 1.5em;
   max-width: 420px;
+  background: var(--form-bg);
 }
 
 .contactForm label {
@@ -121,15 +121,16 @@
 .contactForm button {
   text-transform: uppercase;
   font-size: 0.8em;
-  background: var(--font-color-accent);
   outline: none;
   border: none;
-  color: white;
   margin: 1em 0;
   padding: 0.8em;
   width: 100%;
   border-radius: 1.5em;
   font-weight: bold;
+  cursor: pointer;
+  background: var(--form-button-bg);
+  color: var(--form-button-color);
 }
 
 @keyframes fade-in {

@@ -1,8 +1,31 @@
 :root {
-  --font-color-emphasis: #347474;
   --font-color-accent: #649d66;
+}
+
+body.light {
+  --bg-color: #ffffff;
   --font-color-body: rgba(0, 0, 0, 0.8);
-  --bg-color-light: #ffffff;
+  --tag-bg: #f2f2f2;
+  --tag-color: #5f5f5f;
+  --contact-bg: var(--font-color-accent);
+  --contact-color: #ffffff;
+  --form-bg: #ffffff;
+  --form-button-bg: var(--font-color-accent);
+  --form-button-color: #ffffff;
+  --hr-bg: rgba(0, 0, 0, 0.2);
+}
+
+body.dark {
+  --bg-color: #202020;
+  --font-color-body: hsl(0, 0%, 100%);;
+  --tag-bg: #131313;
+  --tag-color: #f2f2f2;
+  --contact-bg: #1c1c1c;
+  --contact-color: #ffffff;
+  --form-bg: #131313;
+  --form-button-bg: #0e0e0e;
+  --form-button-color: var(--font-color-accent);
+  --hr-bg: rgba(255, 255, 255, 1);
 }
 
 html {
@@ -21,7 +44,9 @@ html, body {
 body {
   font-family: 'Montserrat';
   color: var(--font-color-body);
+  background: var(--bg-color);
 }
+
 
 a {
   color: var(--font-color-accent);
