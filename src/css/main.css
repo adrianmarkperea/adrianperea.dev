@@ -17,6 +17,7 @@ body.light {
   --form-button-bg: var(--font-color-accent);
   --form-button-color: #ffffff;
   --hr-bg: rgba(0, 0, 0, 0.2);
+  --blockquote-color: rgba(0, 0, 0, 0.6);
 }
 
 body.dark {
@@ -30,6 +31,7 @@ body.dark {
   --form-button-bg: #0e0e0e;
   --form-button-color: var(--font-color-accent);
   --hr-bg: rgba(255, 255, 255, 1);
+  --blockquote-color: rgba(255, 255, 255, 0.8);
 }
 
 html {

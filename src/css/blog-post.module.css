@@ -16,6 +16,16 @@
   line-height: 1.8;
 }
 
+.article p img {
+  max-width: 100%;
+}
+
+.article p img + em {
+  display: block;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
 .article li {
   line-height: 1.8;
   margin-bottom: 1rem;
@@ -28,7 +38,7 @@
 .article blockquote {
   margin: 1rem 0 1.4rem 1.4rem;
   font-size: 1.1rem;
-  color: rgba(0, 0, 0, 0.6); 
+  color: var(--blockquote-color); 
   font-style: italic;
   position: relative;
 }
