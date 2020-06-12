@@ -57,6 +57,12 @@
   line-height: 1.5;
 }
 
+.cta {
+  display: flex;
+  justify-content: flex-end;
+  margin: 4rem 0 2rem;
+}
+
 .hr {
   background: var(--hr-bg);
   height: 1px;

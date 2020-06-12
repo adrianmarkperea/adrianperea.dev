@@ -6,9 +6,14 @@ import SEO from "../components/seo"
 import blogPostStyles from "../css/blog-post.module.css"
 import "../css/prism-rainforest.css"
 
-const BlogPostTemplate = ({ data, pageContext, location }) => {
+const GITHUB_USERNAME = "adrianmarkperea"
+const REPO_NAME = "adrianperea.dev"
+
+const BlogPostTemplate = ({ data, pageContext }) => {
   const post = data.markdownRemark
   const { previous, next } = pageContext
+
+  console.log(post)
 
   return (
     <Layout>
@@ -24,6 +29,13 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               <small>{post.frontmatter.date}</small>
             </header>
             <section dangerouslySetInnerHTML={{ __html: post.html }} />
+            <div className={blogPostStyles.cta}>
+              <a
+                href={`https://github.com/${GITHUB_USERNAME}/${REPO_NAME}/edit/master/content/blog/${post.fields.slug}/index.md`}
+              >
+                Edit on Github
+              </a>
+            </div>
             <hr className={blogPostStyles.hr} />
             <footer>
               <Bio />
@@ -71,6 +83,9 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+      }
+      fields {
+        slug
       }
     }
   }
