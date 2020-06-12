@@ -42,7 +42,7 @@ Mind you, my program worked. And I used to argue that as long as the program pro
 
 The truth of the matter is, people spend more time reading code than writing it. This may not seem obvious at first, but whether you’re browsing through documentation, debugging an old program, or simply trying to think of the next line to write, *you’re reading code*.
 
-Here’s a simple exercise: find a program that you wrote a while back and try to understand what it does. Really get into it. Pay attention to how you named your variables and functions, indented each line, and formed every if statement. Examine which functions call which and why the program is structured that way. The goal is to determine whether you can recreate the logical flow of your program *without *having to run it.
+Here’s a simple exercise: find a program that you wrote a while back and try to understand what it does. Really get into it. Pay attention to how you named your variables and functions, indented each line, and formed every if statement. Examine which functions call which and why the program is structured that way. The goal is to determine whether you can recreate the logical flow of your program *without* having to run it.
 
 *Ready? Go.*
 
@@ -68,7 +68,7 @@ While I acknowledge that this is a simplistic demonstration, it carries with it 
 
 * **Take time to name, and name well**. This goes for variables, functions, file names, packages, and what have you. Ensure that you write what you mean and mean what you write. If there is only one sensible way to interpret your code, then you reduce the risk of anyone (including yourself) misunderstanding your logic.
 
-* **Comments to explain code are good. Code that explains code is best. **The general problem with comments is that they are often overlooked. When code with comments is refactored (restructured), there’s a high chance that the comment won’t be updated with it. What was once a helpful comment is now a straight up lie. [Self-documenting code](https://en.wikipedia.org/wiki/Self-documenting_code) (e.g. the third snippet above) offers the same benefit as the first point above: reduced ambiguity and less chances of misinterpretation (plus, it’s much cleaner to look at!).
+* **Comments to explain code are good. Code that explains code is best.** The general problem with comments is that they are often overlooked. When code with comments is refactored (restructured), there’s a high chance that the comment won’t be updated with it. What was once a helpful comment is now a straight up lie. [Self-documenting code](https://en.wikipedia.org/wiki/Self-documenting_code) (e.g. the third snippet above) offers the same benefit as the first point above: reduced ambiguity and less chances of misinterpretation (plus, it’s much cleaner to look at!).
 
 And as a bonus, a lesson that can be learned from my very first program:
 

@@ -39,29 +39,78 @@ Therefore, we don’t need any special procedures. Python supports higher-order 
 
 Let’s see an example:
 
-`gist:adrianmarkperea/3e9c4b794fd7e6f8a9506a560cc234ae#function_argument.py`
+```python
+def say_hello(name):
+    print(f'Hello, {name}!')
+    
+    
+def say_goodbye(name):
+    print(f'Goodbye, {name}!')
+
+    
+def say_to_bob(fun):
+    fun('Bob')
+    
+    
+say_to_bob(say_hello)
+say_to_bob(say_goodbye)
+```
 
 Here, `say_to_bob` is accepting a function parameter fun. We can then use this by passing `say_hello` and `say_goodbye` as arguments to `say_to_bob`.
 
 Seeing this in action:
 
-`gist:adrianmarkperea/0b91d1e8a505ea3917899b85c8dd7074#function_args_out.py`
+```python
+Hello, Bob!
+Goodbye, Bob!
+```
 
 Note that when we pass functions as arguments, we don’t include the parentheses. If we do, Python evaluates the function *before* it gets passed. Often it is easy to spot, since calling the function without the proper arguments will lead to errors:
 
-`gist:adrianmarkperea/e401e19cacc2e1104e2833dca7f6d7ca#function_args_error.py`
+```python
+>>> say_to_bob(say_hello())
+TypeError: say_hello() missing 1 required positional argument: 'name'
+```
 
 This satisfies the first condition for a higher-order function.
 
 Now, let’s change the code above to satisfy the second condition:
 
-`gist:adrianmarkperea/246efefc1f919fa35661252a0d497312#higher_order.py`
+```python
+def say_hello(name):
+    print(f'Hello, {name}!')
+    
+    
+def say_goodbye(name):
+    print(f'Goodbye, {name}!')
+
+
+def get_greeting(greeting):
+    if greeting == 'hello':
+        greeting_fun = say_hello
+    elif greeting == 'goodbye':
+        greeting_fun = say_goodbye
+    
+    return greeting_fun
+    
+    
+def say_to_bob(greeting):
+    greeting_fun = get_greeting(greeting)
+    greeting_fun('Bob')
+    
+    
+say_to_bob('hello')
+say_to_bob('goodbye')
+```
 
 The `get_greeting` function returns a different greeting function depending on the greeting argument. say_to_bobcalls this function and gets a reference to the appropriate greeting function. It then calls this function with Bob.
 
 We get the same output:
 
-`gist:adrianmarkperea/4601fc53cf442193eb2460f27298fe22#higher_order_out.py`
+```python
+Hello, Bob!
+Goodbye, Bob!
+```
 
 Note once again that when we return functions, we omit the parentheses.
 
@@ -82,21 +131,48 @@ From this definition, let’s breakdown a function transformation into three pro
 
 Let’s see an example wherein we add a few debug messages before and after calling a function:
 
-`gist:adrianmarkperea/2b7e6dded10b778b843963bddab2369a#function_transform.py`
+```python
+def walkout():
+    print('Bye Felicia')
+
+    
+def debug_transformer(fun):
+    def wrapper():
+        print(f'Function `{fun.__name__}` called')
+        fun()
+        print(f'Function `{fun.__name__}` finished')
+        
+    return wrapper
+
+
+walkout = debug_transformer(walkout)
+walkout()
+```
 
 Can you see what happened? Let’s look at the output:
 
-`gist:adrianmarkperea/e80f3d3a0507a31536294c82410a3ede#function_transform_out.py`
+```python
+Function `walkout` called
+Bye Felicia
+Function `walkout` finished
+```
 
 Note that we aren’t doing anything new here. This is the same concept of higher-order functions but in a different pattern.
 
 We did the transformation of `walkout` in this line:
 
-`gist:adrianmarkperea/64d5fc64afd42748e5a91134250db055#transformation.py`
+```python
+walkout = debug_transformer(walkout)
+```
 
 From here, the function `walkout` no longer points to the original function definition. It now points to the `wrapper` function which has refers to our original function:
 
-`gist:adrianmarkperea/0ed8994507db3c27565bf6a74e9abd1f#transformation_reference.py`
+```python
+def wrapper():
+    print(f'Function `{fun.__name__}` called')
+    fun() # Original reference to walkout()
+    print(f'Function `{fun.__name__}` finished')
+```
 
 ## The @-syntax (Read: Pie-decorator-syntax)
 
@@ -106,16 +182,42 @@ As you might have observed, writing function transformations is quite cumbersome
 
 To simplify this pattern, the Python team introduced the @-syntax. Let’s see how we can use it to simplify our code above:
 
-`gist:adrianmarkperea/67917f7568e4211b627d52cc3fa4b61c#decorator.py`
+```python
+def debug_transformer(fun):
+    def wrapper():
+        print(f'Function `{fun.__name__}` called')
+        fun()
+        print(f'Function `{fun.__name__}` finished')
+        
+    return wrapper
+
+
+@debug_transformer
+def walkout():
+    print('Bye Felicia')
+
+walkout()
+```
 
 If you run it, you will get the same results as before:
 
-`gist:adrianmarkperea/e80f3d3a0507a31536294c82410a3ede#function_transform_out.py`
-
+```python
+Function `walkout` called
+Bye Felicia
+Function `walkout` finished
+```
 
 Much better! Behind the scenes, what the @-syntax does is the following modification:
 
-`gist:adrianmarkperea/c0c1b0cd1fd5d4f1020b9235d4b9d891#transformation_line.py`
+```python
+# Before
+walkout = debug_transformer(walkout)
+
+# After
+@debug_transformer
+def walkout():
+    print('Bye Felicia')
+```
 
 `@debug_transformer` is a simplified version of `walkout=debug_transformer(walkout)`. This makes it easier to read code since the decorator and function definition are in the same place. Neat!
 
@@ -123,39 +225,105 @@ Much better! Behind the scenes, what the @-syntax does is the following modifica
 
 What happens if we apply our decorator to a function with a return value?
 
-`gist:adrianmarkperea/9e516cfc089519ebcad60a7f860a69bc#transformation_with_ret.py`
+```python
+def debug_transformer(fun):
+    def wrapper():
+        print(f'Function `{fun.__name__}` called')
+        fun()
+        print(f'Function `{fun.__name__}` finished')
+        
+    return wrapper
+
+
+@debug_transformer
+def walkout():
+    print('Bye Felicia')
+
+    
+@debug_transformer
+def get_bob():
+    return 'Bob'
+
+bob = get_bob()
+print(bob)
+```
 
 Which outputs:
 
-`gist:adrianmarkperea/3346196d553a55380ca06f38df7f8070#vanishing_ret_out.py`
+```python
+Function `get_bob` called
+Function `get_bob` finished
+None
+```
 
 The decoration works, but we have no more reference to the return value of the original function. To make this work, change the wrapperfunction to return the results of the original function:
 
-`gist:adrianmarkperea/79e718de0c1f0d0e3d890a43920b8232#vanishing_ret_fixed.py`
+```python
+def debug_transformer(fun):
+    def wrapper():
+        print(f'Function `{fun.__name__}` called')
+        res = fun() # get reference to original return value
+        print(f'Function `{fun.__name__}` finished')
+        
+        return res
+        
+    return wrapper
+```
 
 We now get our expected output:
 
-`gist:adrianmarkperea/35a72de1b2464616175c9168977c629c#vanishing_ret_fixed_out.py`
+```python
+>>> bob = get_bob()
+Function `get_bob` called
+Function `get_bob` finished
+>>> print(bob)
+Bob
+```
 
 ## Decorating Functions with Arguments
 
 Will our decorator still work if we decorate a function with an argument?
 
-`gist:adrianmarkperea/53150707b955edfa80d55f895eced0cf#decorating_with_args.py`
+```python
+@debug_transformer
+def walkout(name):
+    print(f'Bye {name}')
+
+
+walkout('Felicia')
+```
 
 This gives us the following error:
 
-`gist:adrianmarkperea/7fb31814eeda280d75a6279d7d50eb53#decorating_with_args_err.py`
+```python
+TypeError: wrapper() takes 0 positional arguments but 1 was given
+```
 
 The problem occurs because the wrapper function is *not* expecting any arguments. To fix this, we can change it to receive a single argument so our walkout function won’t complain. However, doing so limits the use of our decorator to functions that *only* receive one argument. We need a generalized solution.
 
 We can change wrapper to receive an arbitrary number of arguments using `*args` and `**kwargs`. By doing so, we can support functions with *any* number of arguments:
 
-`gist:adrianmarkperea/617c7ef333e47df23823d7e99cd83557#decorating_with_args_fixed.py`
+```python
+def debug_transformer(fun):
+    # Allow wrapper to receive arbitrary args
+    def wrapper(*args, **kwargs):
+        print(f'Function `{fun.__name__}` called')
+        # And pass it to the original function
+        res = fun(*args, **kwargs)
+        print(f'Function `{fun.__name__}` finished')
+        return res
+        
+    return wrapper
+```
 
 Try it out!
 
-`gist:adrianmarkperea/5c32af478b0d4e9bc1904b91820e294c#decorating_with_args_fixed_out.py`
+```python
+>>> walkout('Dionisia')
+Function `walkout` called
+Bye Dionisia
+Function `walkout` finished
+```
 
 Great! It works. You can experiment and see that this solution for functions with any number of arguments.
 
@@ -169,13 +337,61 @@ Here are a couple of examples for inspiration:
 
 In this example, the original function is called many times inside the wrapper. The final function call receives the result and returns it.
 
-`gist:adrianmarkperea/f2c0b421755ae4a8f3c8c0d443c9b957#call_three_times_dec.py`
+```python
+def call_three_times(fun):
+    def wrapper(*args, **kwargs):
+        fun(*args, **kwargs)
+        fun(*args, **kwargs)
+        res = fun(*args, **kwargs)
+        
+        return res
+    
+    return wrapper
+
+
+@call_three_times
+def say_hey():
+    print('Hey!')
+
+
+say_hey()
+
+# Output
+Hey!
+Hey!
+Hey!
+```
 
 ### Timing a function
 
 Sometimes we want to note how long a function takes to run. We can do this effortlessly with decorators:
 
-`gist:adrianmarkperea/6faba6404880a6ae67f20a37b48a9eb8#waste_time.py`
+```python
+import time
+
+def time_it(fun):
+    def wrapper(*args, **kwargs):
+        start = time.time()
+        res = fun(*args, **kwargs)
+        end = time.time()
+        print(f'Function took {end-start}s')
+        
+        return res
+    
+    return wrapper
+
+
+@time_it
+def waste_time():
+    for i in range(10000000):
+        pass
+
+    
+waste_time()
+
+# Output
+Function took 0.18418407440185547s
+```
 
 Simple yet effective! You will see in the next section that decorators gain even more power when used with external libraries.
 
@@ -185,7 +401,18 @@ How can we apply decorators to external functions if we can’t use the @-syntax
 
 At the start of the article, we created decorators by calling function transforms directly on the functions. We can do the same thing to external functions! Say we want to apply our `time_it` decorator to the `np.sort` function. We can do the following:
 
-`gist:adrianmarkperea/2c2d2d9639ab80c6ad0e4a6da2d88ead#decorating_externals_functions.py`
+```python
+import numpy as np
+
+rng = np.random.RandomState(0)
+
+# Create a lot of numbers
+nums = rng.random(10000000)
+# Decorate np.sort with our time_it transformer
+timed_sort = time_it(np.sort)
+# Perform the sort with our time_it functionality
+timed_sort(nums)
+```
 
 Note here that we assigned the decorated `np.sort` to a new name instead of reassigning it to `np.sort`. This allows to keep the original and transformed versions of the function.
 
