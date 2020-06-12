@@ -6,7 +6,7 @@ import notFoundStyles from "../css/404.module.css"
 const NotFoundPage = () => {
   return (
     <>
-      <SEO title="404: Not Found - Adrian Perea" />
+      <SEO title="404: Not Found" />
       <div className={notFoundStyles.background}>
         <div className={notFoundStyles.cta}>
           <h1>404</h1>

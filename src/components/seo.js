@@ -11,6 +11,7 @@ const SEO = ({ description, lang, meta, title }) => {
         site {
           siteMetadata {
             title
+            defaultTitle
             description
             social {
               twitter
@@ -29,7 +30,8 @@ const SEO = ({ description, lang, meta, title }) => {
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={`%s - ${site.siteMetadata.title}`}
+      defaultTitle={site.siteMetadata.defaultTitle}
       meta={[
         {
           name: `description`,

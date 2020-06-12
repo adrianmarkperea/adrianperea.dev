@@ -94,7 +94,7 @@ const BlogIndex = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Adrian Perea" />
+      <SEO />
       <div className={indexStyles.hero}>
         <div className="container">
           <div className={indexStyles.heroText}>

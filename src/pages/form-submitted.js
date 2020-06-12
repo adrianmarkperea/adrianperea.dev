@@ -7,7 +7,7 @@ import formSubmittedStyles from "../css/form-submitted.module.css"
 const NotFoundPage = () => {
   return (
     <Layout>
-      <SEO title="Form Submitted - Adrian Perea" />
+      <SEO title="Form Submitted" />
       <div className={formSubmittedStyles.wrapper}>
         <div className="container">
           <h1>Thank you!</h1>

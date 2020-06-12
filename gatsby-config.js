@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Adrian Perea`,
+    defaultTitle: `Adrian Perea's Dev Blog`,
     author: {
       name: `Adrian Mark Clave Perea`,
       firstName: `Adrian`,

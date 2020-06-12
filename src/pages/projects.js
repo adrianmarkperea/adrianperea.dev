@@ -8,7 +8,7 @@ import Item from "../components/item"
 const Projects = () => {
   return (
     <Layout>
-      <SEO title="Projects - Adrian Perea" />
+      <SEO title="Projects" />
       <section className="page-section">
         <div className="container">
           <h2 className="title">Projects</h2>
