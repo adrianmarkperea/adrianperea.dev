@@ -63,6 +63,10 @@
   margin: 4rem 0 2rem;
 }
 
+.cta a {
+  margin-left: 0.5rem;
+}
+
 .hr {
   background: var(--hr-bg);
   height: 1px;

@@ -11,9 +11,8 @@ const REPO_NAME = "adrianperea.dev"
 
 const BlogPostTemplate = ({ data, pageContext }) => {
   const post = data.markdownRemark
+  const { social } = data.site.siteMetadata
   const { previous, next } = pageContext
-
-  console.log(post)
 
   return (
     <Layout>
@@ -30,6 +29,13 @@ const BlogPostTemplate = ({ data, pageContext }) => {
             </header>
             <section dangerouslySetInnerHTML={{ __html: post.html }} />
             <div className={blogPostStyles.cta}>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={`https://twitter.com/intent/tweet?text=${post.frontmatter.title} by @${social.twitter}&url=https://adrianperea.dev/${post.fields.slug}`}
+              >
+                Share on Twitter
+              </a>
               <a
                 href={`https://github.com/${GITHUB_USERNAME}/${REPO_NAME}/edit/master/content/blog/${post.fields.slug}/index.md`}
               >
@@ -73,6 +79,9 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        social {
+          twitter
+        }
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
