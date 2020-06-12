@@ -1,7 +1,7 @@
 ---
 title: 'Writing Code People Want to Read'
 description: 'Or how to write beautiful, clean code'
-date: '2020-10-09'
+date: '2019-10-09'
 ---
 
 It was 5 years ago when I first created my first programming project. I was a clueless freshman, taking an introductory course to programming in C++. I’m tempted to lie and say I was a natural programmer, but a snippet of my first project looked something like this:
@@ -90,9 +90,3 @@ Remember: coders aren’t like authors. We *are* authors. And our job is not onl
 * [Design Patterns](https://amzn.to/30ZrGZh) by the famous [Gang of Four](https://en.wikipedia.org/wiki/Design_Patterns)
 
 * [Sourcemaking](https://sourcemaking.com/design_patterns) a one-stop site about design patterns.
-
-## About Adrian Perea
-
-*Part-time Data Scientist, part-time Tech Writer, full-time Nerd. I find joy in teaching Machine Learning and Programming in manageable, **byte**-sized pieces. Yes, I’m also hilarious. Coffee addict. Sucker for data visualization. Willing to give my 1’s and 0’s for the next best Tree Map.*
-
-*Follow me on [Twitter](https://twitter.com/adrianmarkperea) and [LinkedIn](https://www.linkedin.com/in/adrian-perea/).*

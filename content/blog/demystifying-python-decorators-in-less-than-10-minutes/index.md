@@ -1,7 +1,7 @@
 ---
 title: 'Demystifying Python Decorators in 10 Minutes'
 description: 'Automatically packaging python functions in pretty little boxes'
-date: '2020-10-19'
+date: '2019-10-19'
 ---
 
 In this quick tutorial, we will learn all about Python decorators.

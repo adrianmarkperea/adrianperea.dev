@@ -1,3 +1,7 @@
+.article {
+  margin-bottom: 2.6rem;
+}
+
 .article header {
   margin-bottom: 0.6rem;
 }
@@ -12,6 +16,5 @@
 }
 
 .article p {
-  margin-bottom: 1.6rem;
   line-height: 1.8;
 }
