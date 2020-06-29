@@ -1,7 +1,7 @@
 ---
-title: '7 Simple Ways to Increase Your Productivity'
+title: '7 Simple Ways to Increase Your Productivity as a Developer'
 date: '2020-06-27'
-description: 'How can you easily maximize your time as a developer?'
+description: 'How can you easily maximize your dev time?'
 ---
 There are only so many hours in the day, so how can you make sure you're making the most of your time?
 
