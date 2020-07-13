@@ -48,7 +48,7 @@ In other words, the probability of the monkey typing this phrase in random is:
 
 1 in  3,381,391,910,000,000,000,000,000,000,000,000,000,000,000,000,000,000.
 
-And even if the monkey were able to write one million phrases per second, to be abel to write this phrase randomly at least *once*, it would take this much time:
+And even if the monkey were able to write one million phrases per second, to be able to write this phrase randomly at least *once*, it would take this much time:
 
 **5,142,335,400,000,000,000,000,000,000,000,000,000,000,000,000 years**
 
