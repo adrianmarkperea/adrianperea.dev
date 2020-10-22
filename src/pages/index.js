@@ -132,8 +132,7 @@ const BlogIndex = ({ data }) => {
           />
           <p>
             Hi! My name is {author.name}. I'm a full stack software engineer
-            from the Philippines, currently involved with Fujitsu Client
-            Computing Limited in Tokyo, Japan.
+            from the Philippines. 
           </p>
 
           <p>
