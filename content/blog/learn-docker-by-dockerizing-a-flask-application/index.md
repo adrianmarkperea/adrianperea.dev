@@ -22,7 +22,7 @@ Then, let's create our simple Flask application and name it `app.py`:
 
 ```python
 # docker-flask-demo/app.py
-from Flask import flask
+from flask import Flask
 app = Flask(__name__)
 
 
