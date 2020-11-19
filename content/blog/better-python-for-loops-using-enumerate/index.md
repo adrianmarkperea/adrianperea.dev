@@ -2,6 +2,7 @@
 title: 'Better Python for Loops Using enumerate'
 description: 'Get the item and index in one go'
 date: '2020-11-19'
+image: 'https://i.pinimg.com/originals/64/45/cb/6445cbeef31f3b41794cf9de4c1e1e07.jpg'
 ---
 
 It's a common use case to iterate over a list together with its index. Traditionally, this has been done by using a `for` loop, utilizing `range` and `len` to create a list of indices. The items of the list then are accessed using `[]` notation, like so:
