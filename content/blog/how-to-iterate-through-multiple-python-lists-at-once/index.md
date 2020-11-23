@@ -2,7 +2,7 @@
 title:  'How to Iterate Through Multiple Python Lists at Once'
 description:  'How to treat multiple lists as one unit'
 date:  '2020-11-23'
-image:  'https://www.wawak.com/globalassets/tailoring/zippers/5-brass-jacket/WAW_B5/1212094644_bz514ag_1-20180529.jpg?&width=1080&height=1080&quality=100'
+image:  'https://cdn.pixabay.com/photo/2018/06/19/15/52/zipper-3484702_1280.jpg'
 ---
 
 The Python [zip](https://docs.python.org/3.3/library/functions.html#zip) built-in function makes it easy to iterate through multiple iterables all at once. It aggregates elements from each iterable to create an iterator of tuples. The *i-th* tuple contains the *i-th* element of each of the constituent iterables. For example:
